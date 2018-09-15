@@ -1,0 +1,21 @@
+<h1>Order receipt at Jungle</h1>
+<p>
+  Order Completed!
+  Your email: <%= @order.email %>.<br>
+</p>
+
+<h2>Your order details: </h2>
+
+<% @order.line_items.each do |order| %>
+  <p> <%= render 'order', product: order.product, quantity: order.quantity, price: order.item_price %>
+<% end %>
+
+<h3>Your total is:</h3>
+<% sum = 0%>
+<% @order.line_items.each do |product| %>
+<% sum += product.total_price %>
+<% end %>
+<h3> <%= sum %> <h3>
+
+
+<p>Thanks you for your shopping!</p>
