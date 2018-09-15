@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :categories, except: [:edit, :update, :show, :delete]
   end
 
-   get '/sign_up' => 'users#new'
+
 
   resource :users, only: [:create]
 
@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   post '/sign_in' => 'sessions#create'
 
   post '/sign_out' => 'sessions#destroy'
+
+  get '/sign_up' => 'users#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
