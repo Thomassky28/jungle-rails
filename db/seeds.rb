@@ -132,5 +132,112 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+puts "Re-creating reviews ..."
+
+Review.destroy_all
+
+Review.create!({
+  product_id: 1,
+  user_id: 1,
+  description: Faker::Hipster.paragraph(2, true),
+  rating: 5
+})
+
+
+Review.create!({
+  product_id: 1,
+  user_id: 2,
+  description: Faker::Hipster.paragraph(2, true),
+  rating: 5
+})
+
+Review.create!({
+  product_id: 1,
+  user_id: 1,
+  description: Faker::Hipster.paragraph(2, true),
+  rating: 4
+})
+
+Review.create!({
+  product_id: 2,
+  user_id: 2,
+  description: Faker::Hipster.paragraph(2, true),
+  rating: 5
+})
+
+Review.create!({
+  product_id: 2,
+  user_id: 1,
+  description: Faker::Hipster.paragraph(2, true),
+  rating: 4
+})
+
+Review.create!({
+  product_id: 2,
+  user_id: 2,
+  description: Faker::Hipster.paragraph(2, true),
+  rating: 5
+})
+
+Review.create!({
+  product_id: 3,
+  user_id: 2,
+  description: Faker::Hipster.paragraph(2, true),
+  rating: 5
+})
+
+Review.create!({
+  product_id: 3,
+  user_id: 1,
+  description: Faker::Hipster.paragraph(2, true),
+  rating: 5
+})
+
+Review.create!({
+  product_id: 3,
+  user_id: 2,
+  description: Faker::Hipster.paragraph(2, true),
+  rating: 5
+})
+
+Review.create!({
+  product_id: 4,
+  user_id: 1,
+  description: Faker::Hipster.paragraph(2, true),
+  rating: 5
+})
+
+Review.create!({
+  product_id: 4,
+  user_id: 1,
+  description: Faker::Hipster.paragraph(2, true),
+  rating: 4
+})
+
+Review.create!({
+  product_id: 4,
+  user_id: 2,
+  description: Faker::Hipster.paragraph(2, true),
+  rating: 5
+})
+
+puts "Re-creating users"
+
+User.destroy_all
+
+User.create!({
+  first_name: "David",
+  last_name: "S",
+  email: "S@test.com",
+  password: '123'
+})
+
+User.create!({
+  first_name: "Thomas",
+  last_name: "T",
+  email: "T@test.com",
+  password: '123'
+})
+
 
 puts "DONE!"
