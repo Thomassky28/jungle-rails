@@ -24,13 +24,50 @@
           <dd><%= @product.price %></dd>
         </dl>
 
+        <dl class="dl-horizontal">
+          <dd>
+            <h4>Write a review</h4>
+          </dd>
+        </dl>
+        <%= form_for [@product, Review.new], url: "/products/#{params[:id]}/reviews" do |r| %>
+          <% if r.object.errors.any? %>
+            <div class="alert alert-danger">
+              <strong>The following errors prevented saving:</strong>
+              <ul>
+                <% r.object.errors.full_messages.each do |error| %>
+                  <li><%= error %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+        <dl class="dl-horizontal">
+          <div class="form-group">
+            <dt>Comment: </dt>
+            <dd>
+            <%= r.text_area :description, class: 'form-control' %>
+            </dd>
+          </div>
+        </dl>
 
 
+        <dl class="dl-horizontal">
+          <div class="form-group">
+            <dt>Rating:</dt>
+            <dd>
+            <%= r.select(:rating, options_for_select([['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]]), {}, {class: 'form-control'}) %>
+            </dd>
+          </div>
+        </dl>
 
 
+        <dl class="dl-horizontal">
+          <dd>
+          <%= r.submit "Create", class: 'btn btn-primary' %>
+          </dd>
+        </dl>
 
-
-
+        <% end %>
 
 
 
@@ -40,16 +77,16 @@
           </dd>
         </dl>
 
-        <% if @reviews.nil? %>
-          <% @reviews.each_with_index do |review, index| %>
+        <% if @product.reviews.any? %>
+          <% @product.reviews.reverse.each_with_index do |review| %>
             <dl class="dl-horizontal">
-              <dt><%= index + 1  %> Rating: </dt>
-              <dd><%= review.rating %></dd>
-              <dt>Content</dt>
+              <dt> Rating: </dt>
+              <dd><%= review.rating %>/5</dd>
+              <dt>Comment:</dt>
               <dd><%= review.description %></dd>
-              <% if review.user_id == @user_id %>
+              <% if review.user_id.to_i == session[:user_id].to_i %>
                 <dd>
-                  <%= button_to "Delete", review_path('id': review.id, 'pid': params[:id]), class: 'btn btn-sm btn-danger', data: { confirm: "Are you sure?" }, method: :delete %>
+                  <%=button_to "Delete", review_path('id': review.id, 'pid': params[:id]), class: 'btn btn-sm btn-danger', data: { confirm: "Are you sure?" }, method: :delete %>
                 </dd>
               <% end %>
             </dl>
@@ -61,57 +98,6 @@
             </dd>
           </dl>
         <% end %>
-
-
-
-
-   <dl class="dl-horizontal">
-          <dd>
-            <h4>Add review</h4>
-          </dd>
-        </dl>
-
-        <%= form_for @review, url: "/products/#{params[:id]}/reviews" do |f| %>
-
-          <% if f.object.errors.any? %>
-            <div class="alert alert-danger">
-              <strong>The following errors prevented saving:</strong>
-              <ul>
-                <% f.object.errors.full_messages.each do |error| %>
-                  <li><%= error %></li>
-                <% end %>
-              </ul>
-            </div>
-          <% end %>
-
-        <dl class="dl-horizontal">
-          <div class="form-group">
-            <dt>Content: </dt>
-            <dd>
-            <%= f.text_area :description, class: 'form-control' %>
-            </dd>
-          </div>
-        </dl>
-
-
-        <dl class="dl-horizontal">
-          <div class="form-group">
-            <dt>Rating:</dt>
-            <dd>
-            <%= f.select(:rating, options_for_select([['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]]), {}, {class: 'form-control'}) %>
-            </dd>
-          </div>
-        </dl>
-
-
-        <dl class="dl-horizontal">
-          <dd>
-          <%= f.submit "Create", class: 'btn btn-primary' %>
-          </dd>
-        </dl>
-
-        <% end %>
-
 
 
       </div>

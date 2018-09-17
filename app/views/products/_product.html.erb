@@ -25,7 +25,7 @@
         <%  product.reviews.each do |p| %>
           <% sum += p.rating.to_i %>
           <% end %>
-          Rating: <%= sum / product.reviews.size %>
+          Rating: <%= sum / product.reviews.size %>/5
       <%end%>
     </br>
 

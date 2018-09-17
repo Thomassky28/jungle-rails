@@ -35,15 +35,40 @@ puts "Re-creating Products ..."
 
 Product.destroy_all
 
-cat1.products.create!({
+puts "Re-creating users"
+
+User.destroy_all
+
+user1 = User.create!({
+  first_name: "David",
+  last_name: "S",
+  email: "S@test.com",
+  password: '123'
+})
+
+user2 = User.create!({
+  first_name: "Thomas",
+  last_name: "T",
+  email: "T@test.com",
+  password: '123'
+})
+
+user3 = User.create!({
+  first_name: "Chris",
+  last_name: "T",
+  email: "C@test.com",
+  password: '123'
+})
+
+product1 = cat1.products.create!({
   name:  'Men\'s Classy shirt',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel1.jpg'),
-  quantity: 10,
+  quantity: 0,
   price: 64.99
 })
 
-cat1.products.create!({
+product2 = cat1.products.create!({
   name:  'Women\'s Zebra pants',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel2.jpg'),
@@ -55,7 +80,7 @@ cat1.products.create!({
   name:  'Hipster Hat',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel3.jpg'),
-  quantity: 4,
+  quantity: 0,
   price: 34.49
 })
 
@@ -137,107 +162,91 @@ puts "Re-creating reviews ..."
 Review.destroy_all
 
 Review.create!({
-  product_id: 1,
-  user_id: 1,
+  product: product2,
+  user: user1,
   description: Faker::Hipster.paragraph(2, true),
   rating: 5
 })
 
 
 Review.create!({
-  product_id: 1,
-  user_id: 2,
+  product: product2,
+  user: user1,
   description: Faker::Hipster.paragraph(2, true),
   rating: 5
 })
 
 Review.create!({
-  product_id: 1,
-  user_id: 1,
+  product: product1,
+  user: user1,
   description: Faker::Hipster.paragraph(2, true),
   rating: 4
 })
 
 Review.create!({
-  product_id: 2,
-  user_id: 2,
+  product: product1,
+  user: user1,
   description: Faker::Hipster.paragraph(2, true),
   rating: 5
 })
 
 Review.create!({
-  product_id: 2,
-  user_id: 1,
+  product: product1,
+  user: user1,
   description: Faker::Hipster.paragraph(2, true),
   rating: 4
 })
 
 Review.create!({
-  product_id: 2,
-  user_id: 2,
+  product: product1,
+  user: user1,
   description: Faker::Hipster.paragraph(2, true),
   rating: 5
 })
 
 Review.create!({
-  product_id: 3,
-  user_id: 2,
+  product: product2,
+  user: user1,
   description: Faker::Hipster.paragraph(2, true),
   rating: 5
 })
 
 Review.create!({
-  product_id: 3,
-  user_id: 1,
+  product: product1,
+  user: user1,
   description: Faker::Hipster.paragraph(2, true),
   rating: 5
 })
 
 Review.create!({
-  product_id: 3,
-  user_id: 2,
+  product: product2,
+  user: user2,
   description: Faker::Hipster.paragraph(2, true),
   rating: 5
 })
 
 Review.create!({
-  product_id: 4,
-  user_id: 1,
+  product: product1,
+  user: user1,
   description: Faker::Hipster.paragraph(2, true),
   rating: 5
 })
 
 Review.create!({
-  product_id: 4,
-  user_id: 1,
+  product: product1,
+  user: user2,
   description: Faker::Hipster.paragraph(2, true),
   rating: 4
 })
 
 Review.create!({
-  product_id: 4,
-  user_id: 2,
+  product: product1,
+  user: user1,
   description: Faker::Hipster.paragraph(2, true),
   rating: 5
 })
 
-puts "Re-creating users"
 
-User.destroy_all
-
-User.create!({
-  first_name: "David",
-  last_name: "S",
-  email: "S@test.com",
-  password: '123'
-})
-
-User.create!({
-  first_name: "Thomas",
-  last_name: "T",
-  email: "T@test.com",
-  password: '123'
-})
 
 
 puts "DONE!"
