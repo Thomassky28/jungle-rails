@@ -3,7 +3,8 @@
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
 ## Demo
-!["domo page"](https://github.com/Thomassky28/jungle-rails/blob/master/build/De.gif?raw=true)
+!["Demo page"](https://github.com/Thomassky28/jungle-rails/blob/master/build/3.gif?raw=true)
+!["Demo page"](https://github.com/Thomassky28/jungle-rails/blob/master/build/4.gif?raw=true)
 
 ## Setup
 
