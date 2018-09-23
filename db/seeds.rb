@@ -97,7 +97,7 @@ cat1.products.create!({
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel5.jpg'),
   quantity: 8,
-  price: 1_225.00
+  price: 1225.00
 })
 
 cat1.products.create!({

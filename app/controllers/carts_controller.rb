@@ -26,3 +26,6 @@ class CartsController < ApplicationController
   end
 
 end
+
+# @cart_controller = CartsController.new()
+# @cart_controller.add_item
