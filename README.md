@@ -1,28 +1,28 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2.
 
 ## Demo
 
 * Order placement
 
-!["Demo page"](https://github.com/Thomassky28/jungle-rails/blob/master/build/1.gif?raw=true)
+!["Demo page"](https://github.com/Thomassky28/jungle-rails/blob/master/build/1.gif)
 
 * Pay the bill
 
-!["Demo page"](https://github.com/Thomassky28/jungle-rails/blob/master/build/2.gif?raw=true)
+!["Demo page"](https://github.com/Thomassky28/jungle-rails/blob/master/build/2.gif)
 
 * Customer review
 
-!["Demo page"](https://github.com/Thomassky28/jungle-rails/blob/master/build/7.gif?raw=true)
+!["Demo page"](https://github.com/Thomassky28/jungle-rails/blob/master/build/7.gif)
 
 * Customer email receipt
 
-!["Demo page"](https://github.com/Thomassky28/jungle-rails/blob/master/build/receipt.png?raw=true)
+!["Demo page"](https://github.com/Thomassky28/jungle-rails/blob/master/build/receipt.png)
 
 * Admin Authentication
 
-!["Demo page"](https://github.com/Thomassky28/jungle-rails/blob/master/build/6.gif?raw=true)
+!["Demo page"](https://github.com/Thomassky28/jungle-rails/blob/master/build/6.gif)
 
 ## Setup
 
