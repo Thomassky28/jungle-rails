@@ -35,10 +35,11 @@ A mini e-commerce application built with Rails 4.2.
 7. Sign up for a Stripe account
 8. Put Stripe (test) keys into appropriate .env vars
 9. Run `bin/rails s -b 0.0.0.0` to start the server
+10. Open browser at http://localhost:3000/
 
 ## Stripe Testing
 
-Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
+Use Credit Card # 4111 1111 1111 1111 for testing success scenarios
 
 More information in their docs: <https://stripe.com/docs/testing#cards>
 
